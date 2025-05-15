@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hamrofood.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="food-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-utensils me-2"></i>HamroFood</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feature.html">Featured</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.html">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cuisines.html">Cuisines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-3 d-flex">
+                    <a href="#" class="btn btn-outline-light me-2">
+                        <i class="fas fa-search"></i> Search
+                    </a>
+                    <a href="login.html" class="btn btn-primary">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center text-white">
+                    <h1 class="fw-bold">Discover Great Food Near You</h1>
+                    <p class="lead">Explore the best restaurants, cafés, and food shops in your city</p>
+                    <form class="search-form">
+                        <div class="input-group input-group-lg mb-3 search-bar">
+                            <input type="text" class="form-control" placeholder="Search for food, restaurants, or cuisine...">
+                            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Categories -->
+    <section id="featured" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Browse by Category</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-item text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <h5>Fast Food</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-item text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                        <h5>Pizza</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-item text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h5>Café</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-item text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <h5>Seafood</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-item text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-ice-cream"></i>
+                        </div>
+                        <h5>Desserts</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-item text-center">
+                        <div class="category-icon">
+                            <i class="fas fa-bread-slice"></i>
+                        </div>
+                        <h5>Bakery</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Restaurants -->
+    <section id="restaurants" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Top Restaurants</h2>
+            <div class="row g-4">
+                <!-- Restaurant 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card restaurant-card h-100">
+                        <div class="badge bg-success position-absolute top-0 end-0 m-2">Open Now</div>
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="The Italian Corner">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">The Italian Corner</h5>
+                                <span class="badge bg-primary">4.8 <i class="fas fa-star"></i></span>
+                            </div>
+                            <div class="restaurant-info mb-2">
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-utensils me-1"></i> Italian</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-map-marker-alt me-1"></i> 2.3 mi</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-clock me-1"></i> 30-40 min</span>
+                            </div>
+                            <p class="card-text">Authentic Italian cuisine with homemade pasta and wood-fired pizzas in a cozy atmosphere.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-motorcycle me-1"></i> Free delivery</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Restaurant 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card restaurant-card h-100">
+                        <div class="badge bg-success position-absolute top-0 end-0 m-2">Open Now</div>
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="Sushi Master">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Sushi Master</h5>
+                                <span class="badge bg-primary">4.6 <i class="fas fa-star"></i></span>
+                            </div>
+                            <div class="restaurant-info mb-2">
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-utensils me-1"></i> Japanese</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-map-marker-alt me-1"></i> 1.8 mi</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-clock me-1"></i> 25-35 min</span>
+                            </div>
+                            <p class="card-text">Premium sushi and Japanese specialties made with fresh ingredients by skilled chefs.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-motorcycle me-1"></i> $2.99 delivery</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Restaurant 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card restaurant-card h-100">
+                        <div class="badge bg-danger position-absolute top-0 end-0 m-2">Closed</div>
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlc3RhdXJhbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="Burger House">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Burger House</h5>
+                                <span class="badge bg-primary">4.5 <i class="fas fa-star"></i></span>
+                            </div>
+                            <div class="restaurant-info mb-2">
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-utensils me-1"></i> American</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-map-marker-alt me-1"></i> 0.7 mi</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-clock me-1"></i> 15-25 min</span>
+                            </div>
+                            <p class="card-text">Gourmet burgers made with premium beef, fresh toppings, and homemade sauces.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-motorcycle me-1"></i> Free delivery</span>
+                                <a href="#" class="btn btn-sm btn-outline-secondary">Opens at 11 AM</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Restaurant 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card restaurant-card h-100">
+                        <div class="badge bg-success position-absolute top-0 end-0 m-2">Open Now</div>
+                        <img src="https://images.unsplash.com/photo-1542181961-9590d0c79dab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHJlc3RhdXJhbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="Spice Garden">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Spice Garden</h5>
+                                <span class="badge bg-primary">4.7 <i class="fas fa-star"></i></span>
+                            </div>
+                            <div class="restaurant-info mb-2">
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-utensils me-1"></i> Indian</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-map-marker-alt me-1"></i> 3.1 mi</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-clock me-1"></i> 35-45 min</span>
+                            </div>
+                            <p class="card-text">Authentic Indian dishes with aromatic spices and flavors from various regions of India.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-motorcycle me-1"></i> $1.99 delivery</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Restaurant 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card restaurant-card h-100">
+                        <div class="badge bg-success position-absolute top-0 end-0 m-2">Open Now</div>
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHJlc3RhdXJhbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="Green Leaf Café">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Green Leaf Café</h5>
+                                <span class="badge bg-primary">4.9 <i class="fas fa-star"></i></span>
+                            </div>
+                            <div class="restaurant-info mb-2">
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-utensils me-1"></i> Vegetarian</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-map-marker-alt me-1"></i> 1.5 mi</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-clock me-1"></i> 20-30 min</span>
+                            </div>
+                            <p class="card-text">Healthy vegetarian and vegan options with organic ingredients and fresh smoothies.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-motorcycle me-1"></i> Free delivery</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Restaurant 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card restaurant-card h-100">
+                        <div class="badge bg-success position-absolute top-0 end-0 m-2">Open Now</div>
+                        <img src="premium_photo-1676608101501-6a24d839255b.avif" class="card-img-top" alt="Seaside Seafood">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Seaside Seafood</h5>
+                                <span class="badge bg-primary">4.4 <i class="fas fa-star"></i></span>
+                            </div>
+                            <div class="restaurant-info mb-2">
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-utensils me-1"></i> Seafood</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-map-marker-alt me-1"></i> 2.7 mi</span>
+                                <span class="badge rounded-pill bg-light text-dark"><i class="fas fa-clock me-1"></i> 30-40 min</span>
+                            </div>
+                            <p class="card-text">Fresh seafood dishes including fish, shrimp, and lobster prepared in various styles.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-motorcycle me-1"></i> $3.99 delivery</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="restaurants.html" class="btn btn-lg btn-primary">View All Restaurants</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuisine Types -->
+    <section id="cuisines" class="py-5" style="background-image: url('pizza.avif'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255,255,255,0.85);"></div>
+        <div class="container" style="position: relative;">
+            <h2 class="text-center mb-4">Popular Cuisines</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="cuisine-card">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGl6emF8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="Italian" class="img-fluid rounded">
+                        <div class="cuisine-overlay">
+                            <h3>Italian</h3>
+                            <p>25+ Restaurants</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cuisine-card">
+                        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3VzaGl8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="Japanese" class="img-fluid rounded">
+                        <div class="cuisine-overlay">
+                            <h3>Japanese</h3>
+                            <p>18+ Restaurants</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cuisine-card">
+                        <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bWV4aWNhbiUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="Mexican" class="img-fluid rounded">
+                        <div class="cuisine-overlay">
+                            <h3>Mexican</h3>
+                            <p>15+ Restaurants</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-5 bg-light" style="background-image: url('pizza.avif'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(245,245,245,0.9);"></div>
+        <div class="container" style="position: relative;">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    <div class="how-it-works-icon mb-3">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>Find Restaurants</h4>
+                    <p>Discover the best restaurants near you based on your location and preferences.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="how-it-works-icon mb-3">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h4>Choose Your Food</h4>
+                    <p>Browse menus, read reviews, and select your favorite dishes from the restaurant of your choice.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="how-it-works-icon mb-3">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h4>Fast Delivery</h4>
+                    <p>Get your food delivered to your doorstep quickly or pick it up from the restaurant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose HamroFood</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 feature-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-map-marked-alt text-primary fa-3x"></i>
+                            </div>
+                            <h4>Real-Time Tracking</h4>
+                            <p>Track your food order in real-time and know exactly when it will arrive at your doorstep.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 feature-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-credit-card text-primary fa-3x"></i>
+                            </div>
+                            <h4>Easy Payments</h4>
+                            <p>Multiple secure payment options including credit cards, digital wallets, and cash on delivery.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 feature-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-gift text-primary fa-3x"></i>
+                            </div>
+                            <h4>Rewards Program</h4>
+                            <p>Earn points with every order and redeem them for discounts on future orders.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 feature-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-percentage text-primary fa-3x"></i>
+                            </div>
+                            <h4>Special Offers</h4>
+                            <p>Exclusive deals and discounts from your favorite restaurants updated daily.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 feature-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-star text-primary fa-3x"></i>
+                            </div>
+                            <h4>Ratings & Reviews</h4>
+                            <p>Honest feedback from customers to help you make informed food choices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 feature-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-filter text-primary fa-3x"></i>
+                            </div>
+                            <h4>Dietary Filters</h4>
+                            <p>Find restaurants catering to specific dietary needs like vegetarian, vegan, or gluten-free.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 feature-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-clock text-primary fa-3x"></i>
+                            </div>
+                            <h4>Schedule Orders</h4>
+                            <p>Plan ahead by scheduling your meal deliveries for a specific date and time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 feature-card border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-user-shield text-primary fa-3x"></i>
+                            </div>
+                            <h4>Contactless Delivery</h4>
+                            <p>Safe, no-contact delivery options for a secure and hygienic experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download -->
+    <section class="py-5 app-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2>Download Our Mobile App</h2>
+                    <p class="lead">Get the full experience on your mobile device. Order food, track delivery, and receive exclusive offers.</p>
+                    <div class="d-flex flex-wrap">
+                        <a href="#" class="me-3 mb-3">
+                            <img src="https://via.placeholder.com/150x50.png?text=App+Store" alt="App Store" class="img-fluid">
+                        </a>
+                        <a href="#" class="mb-3">
+                            <img src="https://via.placeholder.com/150x50.png?text=Google+Play" alt="Google Play" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://via.placeholder.com/400x600.png?text=App+Screenshot" alt="App Screenshot" class="img-fluid app-screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p class="lead">Get updates on new restaurants, special offers, and exclusive promotions</p>
+                    <form class="row g-3 justify-content-center">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control form-control-lg" placeholder="Your Email Address">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-dark btn-lg w-100">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5><i class="fas fa-utensils me-2"></i>FoodHub</h5>
+                    <p>Your destination for finding the best restaurants and food delivery in your area.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#restaurants" class="text-white">Restaurants</a></li>
+                        <li><a href="#cuisines" class="text-white">Cuisines</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-white">Refund Policy</a></li>
+                        <li><a href="#" class="text-white">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> kawasoti-08,Nawalpur</p>
+                        <p><i class="fas fa-phone-alt me-2"></i> +977 9860125878</p>
+                        <p><i class="fas fa-envelope me-2"></i> nishant@gamil.com</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2024 FoodHub. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="https://via.placeholder.com/250x30.png?text=Payment+Methods" alt="Payment Methods" class="img-fluid payment-methods">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="food-script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HamroFood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg');
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .hero-contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            margin-bottom: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-contact::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #f8f9fa;
+            transform: skewY(-3deg);
+            z-index: 1;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(13, 110, 253, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form .form-control {
+            border: none;
+            border-bottom: 2px solid #e9ecef;
+            border-radius: 0;
+            padding: 15px 0;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form .form-control:focus {
+            box-shadow: none;
+            border-color: #0d6efd;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #0d6efd;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+            color: #0d6efd;
+        }
+        
+        .contact-card {
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .divider-custom {
+            width: 100%;
+            max-width: 250px;
+            margin: 25px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .divider-custom-line {
+            width: 100%;
+            max-width: 7rem;
+            height: 2px;
+            background-color: #0d6efd;
+            border-radius: 1rem;
+        }
+        
+        .divider-custom-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #0d6efd;
+            border: 2px solid #0d6efd;
+            margin: 0 1rem;
+        }
+        
+        .contact-list {
+            counter-reset: contact-counter;
+        }
+        
+        .contact-list li {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 30px;
+            counter-increment: contact-counter;
+        }
+        
+        .contact-list li::before {
+            content: counter(contact-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(13, 110, 253, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #0d6efd;
+            font-size: 18px;
+        }
+        
+        .contact-bg-pattern {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='60' r='50' fill='%230d6efd' fill-opacity='0.05'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .pattern-top-right {
+            top: 50px;
+            right: 50px;
+        }
+        
+        .pattern-bottom-left {
+            bottom: 50px;
+            left: 50px;
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .info-box {
+            padding: 30px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .map-container {
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="food-index.html"><i class="fas fa-utensils me-2"></i>HamroFood</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="food-index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feature.html">Featured</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.html">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cuisines.html">Cuisines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-3 d-flex">
+                    <a href="#" class="btn btn-outline-light me-2">
+                        <i class="fas fa-search"></i> Search
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-contact">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h1 class="display-4 fw-bold mb-4">Contact Us</h1>
+                    <p class="lead mb-5">We'd love to hear from you! Get in touch with our friendly team for any questions or feedback.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Contact Info Cards -->
+        <section class="py-5 position-relative">
+            <div class="contact-bg-pattern pattern-top-right"></div>
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-10 text-center">
+                        <h2 class="mb-4 text-primary">Get In Touch With Us</h2>
+                        <p class="lead mb-4">Have questions about our service or need help finding the perfect restaurant? Our team is here to assist you!</p>
+                        <div class="divider-custom mx-auto mb-5">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-utensils"></i></div>
+                            <div class="divider-custom-line"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="info-box text-center">
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt fs-4 text-primary"></i>
+                                </div>
+                            </div>
+                            <h4 class="mb-3">Our Location</h4>
+                            <p class="mb-0">Kawasoti-08, Nawalpur</p>
+                            <p>Nepal</p>
+                            <a href="https://goo.gl/maps/1234" class="btn btn-outline-primary mt-3">
+                                <i class="fas fa-directions me-2"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="info-box text-center">
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt fs-4 text-primary"></i>
+                                </div>
+                            </div>
+                            <h4 class="mb-3">Call Us</h4>
+                            <p class="mb-0">+977 9860125878</p>
+                            <p>Monday-Friday: 9AM - 5PM</p>
+                            <a href="tel:+9779860125878" class="btn btn-outline-primary mt-3">
+                                <i class="fas fa-phone-alt me-2"></i> Call Now
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="info-box text-center">
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope fs-4 text-primary"></i>
+                                </div>
+                            </div>
+                            <h4 class="mb-3">Email Us</h4>
+                            <p class="mb-0">nishant@gmail.com</p>
+                            <p>We respond within 24 hours</p>
+                            <a href="mailto:nishant@gmail.com" class="btn btn-outline-primary mt-3">
+                                <i class="fas fa-envelope me-2"></i> Send Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Form and Map -->
+        <section class="py-5 bg-light">
+            <div class="contact-bg-pattern pattern-bottom-left"></div>
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-10 text-center">
+                        <h2 class="mb-4 text-primary">Send Us a Message</h2>
+                        <p class="lead mb-0">Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="card border-0 shadow-lg rounded-3 h-100">
+                            <div class="card-body p-4 p-lg-5">
+                                <h3 class="fw-bold text-primary mb-4">Contact Form</h3>
+                                <form class="contact-form">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="nameInput" placeholder="Your Name">
+                                                <label for="nameInput">Your Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="emailInput" placeholder="Your Email">
+                                                <label for="emailInput">Your Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3">
+                                                <input type="tel" class="form-control" id="phoneInput" placeholder="Your Phone">
+                                                <label for="phoneInput">Your Phone</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="subjectSelect" aria-label="Subject">
+                                                    <option selected>Select a subject</option>
+                                                    <option value="1">General Inquiry</option>
+                                                    <option value="2">Restaurant Partnership</option>
+                                                    <option value="3">Feedback</option>
+                                                    <option value="4">Technical Support</option>
+                                                </select>
+                                                <label for="subjectSelect">Subject</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" id="messageInput" placeholder="Your Message" style="height: 150px"></textarea>
+                                                <label for="messageInput">Your Message</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" value="" id="subscribeCheck">
+                                                <label class="form-check-label" for="subscribeCheck">
+                                                    Subscribe to our newsletter for the latest updates and offers
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary btn-lg px-5 py-3 rounded-pill">
+                                                <i class="fas fa-paper-plane me-2"></i> Send Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-lg rounded-3 h-100">
+                            <div class="card-body p-4 p-lg-5">
+                                <h3 class="fw-bold text-primary mb-4">Our Location</h3>
+                                <div class="map-container mb-4">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31397712412!2d84.08336695253516!3d27.640743995643805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb3dc4bf97b9%3A0xc63098c456234059!2sKawasoti%2033007!5e0!3m2!1sen!2snp!4v1682434123456!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                
+                                <h4 class="fw-bold mb-3">Business Hours</h4>
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                        <span><i class="fas fa-calendar-day me-2 text-primary"></i> Monday - Friday</span>
+                                        <span class="badge bg-primary rounded-pill">9:00 AM - 5:00 PM</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                        <span><i class="fas fa-calendar-day me-2 text-primary"></i> Saturday</span>
+                                        <span class="badge bg-primary rounded-pill">10:00 AM - 2:00 PM</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                        <span><i class="fas fa-calendar-day me-2 text-primary"></i> Sunday</span>
+                                        <span class="badge bg-danger rounded-pill">Closed</span>
+                                    </li>
+                                </ul>
+                                
+                                <h4 class="fw-bold mb-3">Connect With Us</h4>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="#" class="social-link bg-primary"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-link bg-info"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-link bg-danger"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-link bg-dark"><i class="fab fa-tiktok"></i></a>
+                                    <a href="#" class="social-link" style="background-color: #c4302b;"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-10 text-center">
+                        <h2 class="mb-4 text-primary">Frequently Asked Questions</h2>
+                        <p class="lead mb-0">Find answers to common questions about our services.</p>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="accordion accordion-flush" id="faqAccordion">
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        How do I place an order through HamroFood?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Placing an order is easy! Simply browse restaurants in your area, select your desired items, add them to your cart, and proceed to checkout. You can pay online or choose cash on delivery.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        What is the delivery time and fee?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Delivery times vary depending on your location and the restaurant you order from. The estimated delivery time is displayed before you place your order. Delivery fees also vary but are always shown before checkout.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        How can restaurants partner with HamroFood?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Restaurant owners can join our platform by filling out the partnership form on our website. Our team will review your application and get in touch within 48 hours to discuss the next steps.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        What payment methods do you accept?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We accept credit/debit cards, mobile payment apps, and cash on delivery. All online payments are secure and encrypted for your protection.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        How can I track my order?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Once your order is confirmed, you can track its status in real-time through our app or website. You'll receive updates when the restaurant accepts your order, when it's being prepared, and when it's out for delivery.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <p class="lead">Get updates on new restaurants, special offers, and exclusive promotions</p>
+                        <form class="row g-3 justify-content-center">
+                            <div class="col-md-8">
+                                <input type="email" class="form-control form-control-lg" placeholder="Your Email Address">
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-dark btn-lg w-100">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5><i class="fas fa-utensils me-2"></i>HamroFood</h5>
+                    <p>Your destination for finding the best restaurants and food delivery in your area.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="food-index.html" class="text-white">Home</a></li>
+                        <li><a href="feature.html" class="text-white">Features</a></li>
+                        <li><a href="restaurants.html" class="text-white">Restaurants</a></li>
+                        <li><a href="cuisines.html" class="text-white">Cuisines</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-white">Refund Policy</a></li>
+                        <li><a href="#" class="text-white">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Kawasoti-08, Nawalpur</p>
+                        <p><i class="fas fa-phone-alt me-2"></i> +977 9860125878</p>
+                        <p><i class="fas fa-envelope me-2"></i> nishant@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2024 HamroFood. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="https://via.placeholder.com/250x30.png?text=Payment+Methods" alt="Payment Methods" class="img-fluid payment-methods">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Scroll to Top functionality
+        document.getElementById('scrollToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                document.getElementById('scrollToTop').style.display = 'flex';
+            } else {
+                document.getElementById('scrollToTop').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html> 
